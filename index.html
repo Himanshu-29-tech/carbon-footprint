@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoTrack / Your Impact, Simplified.</title>
+  <meta name="description" content="EcoTrack is a premium carbon tracking experience that helps you visualize, understand, and reduce your daily carbon footprint.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Background Animated Leaf & Gradient Blobs -->
+  <div class="bg-blobs" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header>
+    <a href="#" class="logo" id="header-logo">Eco<span>Track.</span></a>
+    <button class="menu-trigger" id="menu-toggle" aria-label="Toggle Menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <!-- Fullscreen Navigation Menu -->
+  <nav class="nav-overlay" id="nav-overlay" aria-hidden="true">
+    <ul class="nav-links">
+      <li><a href="#hero" class="nav-link-item">/ Home</a></li>
+      <li><a href="#quiz-section" class="nav-link-item">/ Get Started</a></li>
+      <li><a href="#dashboard-section" class="nav-link-item">/ Your Impact</a></li>
+      <li><a href="#insights-section" class="nav-link-item">/ Insights</a></li>
+      <li><a href="#actions-section" class="nav-link-item">/ Daily Actions</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-label">/ EcoTrack Platform</div>
+    <h1 class="hero-title">Your Impact,<br><span>Simplified.</span></h1>
+    <a href="#quiz-section" class="btn btn-primary" style="margin-top: 1rem;">
+      Get Started
+      <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg" style="stroke: currentColor; stroke-width: 2px;">
+        <path d="M1 7H17M17 7L11 1M17 7L11 13" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <a href="#quiz-section" class="scroll-cue">
+      <span>Scroll Down</span>
+      <div class="scroll-line"></div>
+    </a>
+  </section>
+
+  <!-- Onboarding Quiz Section ("/ Get Started") -->
+  <section class="reveal" id="quiz-section">
+    <div class="section-label">/ Get Started</div>
+    <h2 class="section-title">Measure Your Footprint.<span>Answer 4 quick questions to see how your daily choices shape the environment.</span></h2>
+    
+    <div class="quiz-container">
+      <div class="quiz-progress-bar" id="quiz-progress"></div>
+      
+      <!-- STEP 1: COMMUTE (TRANSPORT) -->
+      <div class="quiz-step active" data-step="1" data-category="transport">
+        <div class="quiz-question-number">01 / 04</div>
+        <div class="quiz-question">How do you primarily get around?</div>
+        <div class="quiz-options">
+          <div class="quiz-option" data-value="1.8">
+            <div>
+              <div class="quiz-option-text">Drive Solo (Petrol/Diesel car)</div>
+              <div class="quiz-option-desc">Daily commute or frequent driving by yourself.</div>
+            </div>
+            <span class="quiz-option-value">High Carbon</span>
+          </div>
+          <div class="quiz-option" data-value="0.7">
+            <div>
+              <div class="quiz-option-text">Electric / Hybrid Vehicle</div>
+              <div class="quiz-option-desc">Plug-in hybrid, EV, or sharing rides with others.</div>
+            </div>
+            <span class="quiz-option-value">Medium-Low</span>
+          </div>
+          <div class="quiz-option" data-value="0.3">
+            <div>
+              <div class="quiz-option-text">Public Transportation</div>
+              <div class="quiz-option-desc">Buses, trains, subways, or regular transit.</div>
+            </div>
+            <span class="quiz-option-value">Low Carbon</span>
+          </div>
+          <div class="quiz-option" data-value="0.05">
+            <div>
+              <div class="quiz-option-text">Walk, Cycle or Remote</div>
+              <div class="quiz-option-desc">Zero emissions commuting, working from home.</div>
+            </div>
+            <span class="quiz-option-value">Minimal</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 2: DIET -->
+      <div class="quiz-step" data-step="2" data-category="diet">
+        <div class="quiz-question-number">02 / 04</div>
+        <div class="quiz-question">What does your typical daily diet look like?</div>
+        <div class="quiz-options">
+          <div class="quiz-option" data-value="2.2">
+            <div>
+              <div class="quiz-option-text">Meat Lover</div>
+              <div class="quiz-option-desc">Beef, pork, or poultry with almost every meal.</div>
+            </div>
+            <span class="quiz-option-value">High Carbon</span>
+          </div>
+          <div class="quiz-option" data-value="1.3">
+            <div>
+              <div class="quiz-option-text">Balanced Diet</div>
+              <div class="quiz-option-desc">Mixed meat, fish, dairy, and vegetable dishes.</div>
+            </div>
+            <span class="quiz-option-value">Medium Carbon</span>
+          </div>
+          <div class="quiz-option" data-value="0.6">
+            <div>
+              <div class="quiz-option-text">Vegetarian / Pescatarian</div>
+              <div class="quiz-option-desc">No red meat/poultry. Focus on dairy, eggs, fish, vegetables.</div>
+            </div>
+            <span class="quiz-option-value">Low Carbon</span>
+          </div>
+          <div class="quiz-option" data-value="0.25">
+            <div>
+              <div class="quiz-option-text">Vegan (Plant-Based)</div>
+              <div class="quiz-option-desc">Strictly grains, beans, greens, and plant proteins.</div>
+            </div>
+            <span class="quiz-option-value">Minimal</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 3: HOME ENERGY -->
+      <div class="quiz-step" data-step="3" data-category="energy">
+        <div class="quiz-question-number">03 / 04</div>
+        <div class="quiz-question">How is your household power and heating sourced?</div>
+        <div class="quiz-options">
+          <div class="quiz-option" data-value="2.0">
+            <div>
+              <div class="quiz-option-text">Traditional Grid Power</div>
+              <div class="quiz-option-desc">Standard heating and electricity from coal/gas grids.</div>
+            </div>
+            <span class="quiz-option-value">High Carbon</span>
+          </div>
+          <div class="quiz-option" data-value="1.1">
+            <div>
+              <div class="quiz-option-text">Mixed Energy (Standard with HVAC conservation)</div>
+              <div class="quiz-option-desc">Smart thermostats, energy-efficient appliances.</div>
+            </div>
+            <span class="quiz-option-value">Medium Carbon</span>
+          </div>
+          <div class="quiz-option" data-value="0.4">
+            <div>
+              <div class="quiz-option-text">Renewable/Green Energy Plan</div>
+              <div class="quiz-option-desc">Home solar panel systems or subscription green energy.</div>
+            </div>
+            <span class="quiz-option-value">Low Carbon</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 4: SHOPPING HABITS -->
+      <div class="quiz-step" data-step="4" data-category="shopping">
+        <div class="quiz-question-number">04 / 04</div>
+        <div class="quiz-question">How would you describe your buying and shopping habits?</div>
+        <div class="quiz-options">
+          <div class="quiz-option" data-value="1.5">
+            <div>
+              <div class="quiz-option-text">Frequent Consumer</div>
+              <div class="quiz-option-desc">Regularly buying new clothing, devices, and packaging.</div>
+            </div>
+            <span class="quiz-option-value">High Carbon</span>
+          </div>
+          <div class="quiz-option" data-value="0.8">
+            <div>
+              <div class="quiz-option-text">Conscious Shopper</div>
+              <div class="quiz-option-desc">Only buy what's necessary, checking for eco labels.</div>
+            </div>
+            <span class="quiz-option-value">Medium Carbon</span>
+          </div>
+          <div class="quiz-option" data-value="0.25">
+            <div>
+              <div class="quiz-option-text">Minimalist / Circular</div>
+              <div class="quiz-option-desc">Thrift, borrow, reuse, and repair first. Avoid waste.</div>
+            </div>
+            <span class="quiz-option-value">Minimal</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="quiz-nav-buttons">
+        <button class="btn" id="quiz-back" disabled>
+          <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg" style="stroke: currentColor; stroke-width: 2px;">
+            <path d="M17 7H1M1 7L7 13M1 7L7 1" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Back
+        </button>
+        <button class="btn btn-primary" id="quiz-next" disabled>
+          Next Step
+          <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg" style="stroke: currentColor; stroke-width: 2px;">
+            <path d="M1 7H17M17 7L11 1M17 7L11 13" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results Dashboard Section ("/ Your Impact") -->
+  <section class="reveal" id="dashboard-section">
+    <div class="section-label">/ Your Impact</div>
+    <h2 class="section-title">Your Footprint Ledger.<span>Your estimated emissions footprint, contrasted with benchmark planetary averages.</span></h2>
+    
+    <div class="dashboard-grid">
+      <!-- Big Number Card -->
+      <div class="dashboard-hero-card">
+        <div class="impact-badge" id="impact-grade">Awaiting Quiz</div>
+        <div class="dashboard-score-wrap">
+          <span class="dashboard-score" id="score-display">0.0</span>
+          <span class="dashboard-score-unit">tonnes CO₂e / yr</span>
+        </div>
+        <p class="dashboard-context" id="impact-summary-text">
+          Complete the onboarding quiz above to compute your real carbon ledger and get actionable items.
+        </p>
+      </div>
+
+      <!-- Progress Ring Graphic Card -->
+      <div class="gauge-card">
+        <div class="gauge-svg-container">
+          <svg class="gauge-svg" width="220" height="220">
+            <circle class="gauge-bg-circle" cx="110" cy="110" r="95"></circle>
+            <circle class="gauge-val-circle" id="gauge-circle" cx="110" cy="110" r="95" stroke-dasharray="596.9" stroke-dashoffset="596.9"></circle>
+          </svg>
+          <div class="gauge-text">
+            <div class="gauge-percent" id="gauge-percent">0%</div>
+            <div class="gauge-label">of Target Max</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Category Breakdown -->
+    <div class="breakdown-section">
+      <h3 class="breakdown-title">Consumption Ledger</h3>
+      <div class="breakdown-grid">
+        <!-- Transport Card -->
+        <div class="breakdown-item">
+          <div class="breakdown-header">
+            <span class="breakdown-name">Transport</span>
+            <span class="breakdown-icon">🚲</span>
+          </div>
+          <div class="breakdown-value" id="breakdown-val-transport">0.0</div>
+          <span class="breakdown-unit">tonnes CO₂ / yr</span>
+          <div class="breakdown-progress-bar-container">
+            <div class="breakdown-progress-bar" id="breakdown-bar-transport"></div>
+          </div>
+        </div>
+
+        <!-- Food Card -->
+        <div class="breakdown-item">
+          <div class="breakdown-header">
+            <span class="breakdown-name">Diet & Food</span>
+            <span class="breakdown-icon">🍲</span>
+          </div>
+          <div class="breakdown-value" id="breakdown-val-diet">0.0</div>
+          <span class="breakdown-unit">tonnes CO₂ / yr</span>
+          <div class="breakdown-progress-bar-container">
+            <div class="breakdown-progress-bar" id="breakdown-bar-diet"></div>
+          </div>
+        </div>
+
+        <!-- Energy Card -->
+        <div class="breakdown-item">
+          <div class="breakdown-header">
+            <span class="breakdown-name">Household</span>
+            <span class="breakdown-icon">💡</span>
+          </div>
+          <div class="breakdown-value" id="breakdown-val-energy">0.0</div>
+          <span class="breakdown-unit">tonnes CO₂ / yr</span>
+          <div class="breakdown-progress-bar-container">
+            <div class="breakdown-progress-bar" id="breakdown-bar-energy"></div>
+          </div>
+        </div>
+
+        <!-- Shopping Card -->
+        <div class="breakdown-item">
+          <div class="breakdown-header">
+            <span class="breakdown-name">Shopping</span>
+            <span class="breakdown-icon">🛍️</span>
+          </div>
+          <div class="breakdown-value" id="breakdown-val-shopping">0.0</div>
+          <span class="breakdown-unit">tonnes CO₂ / yr</span>
+          <div class="breakdown-progress-bar-container">
+            <div class="breakdown-progress-bar" id="breakdown-bar-shopping"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Insights Section ("/ Insights") -->
+  <section class="reveal" id="insights-section">
+    <div class="section-label">/ Insights</div>
+    <h2 class="section-title">Strategic Pathways.<span>Constructive directives tailored to your highest areas of impact. Click to unfold.</span></h2>
+    
+    <div class="insights-list" id="insights-list">
+      <!-- Inserts dynamic customized cards via JavaScript, template below is fallback -->
+      <div class="insight-card" data-category="transport">
+        <div class="insight-header">
+          <div class="insight-summary-left">
+            <div class="insight-number">01</div>
+            <div class="insight-title-wrap">
+              <span class="insight-category">Transport</span>
+              <h3 class="insight-title">Transition your commute method</h3>
+            </div>
+          </div>
+          <span class="insight-trigger">+</span>
+        </div>
+        <div class="insight-drawer">
+          <div class="insight-drawer-grid">
+            <p class="insight-description">
+              Moving around solo in combustion vehicles constitutes your largest carbon output. Swapping just 2 drives a week for electric vehicle carpooling, rail, or bike transits offers an aggressive reduction curve.
+            </p>
+            <div class="insight-metric-card">
+              <div class="insight-metric-value">-1.5 t</div>
+              <div class="insight-metric-label">Potential annual savings</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="insight-card" data-category="diet">
+        <div class="insight-header">
+          <div class="insight-summary-left">
+            <div class="insight-number">02</div>
+            <div class="insight-title-wrap">
+              <span class="insight-category">Diet</span>
+              <h3 class="insight-title">Introduce plant-based days</h3>
+            </div>
+          </div>
+          <span class="insight-trigger">+</span>
+        </div>
+        <div class="insight-drawer">
+          <div class="insight-drawer-grid">
+            <p class="insight-description">
+              Red meats (beef and lamb) are heavily carbon-intensive. Committing to plant-based choices on weekdays and choosing local produce bypasses heavy supply emissions.
+            </p>
+            <div class="insight-metric-card">
+              <div class="insight-metric-value">-0.9 t</div>
+              <div class="insight-metric-label">Potential annual savings</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="insight-card" data-category="energy">
+        <div class="insight-header">
+          <div class="insight-summary-left">
+            <div class="insight-number">03</div>
+            <div class="insight-title-wrap">
+              <span class="insight-category">Energy</span>
+              <h3 class="insight-title">Audit residential thermostat loops</h3>
+            </div>
+          </div>
+          <span class="insight-trigger">+</span>
+        </div>
+        <div class="insight-drawer">
+          <div class="insight-drawer-grid">
+            <p class="insight-description">
+              Heating and cooling standard grid-powered households drives hefty emissions. Lowering temperature thresholds by 1°C in winter and upgrading to smart plugs decreases base loads significantly.
+            </p>
+            <div class="insight-metric-card">
+              <div class="insight-metric-value">-0.7 t</div>
+              <div class="insight-metric-label">Potential annual savings</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="insight-card" data-category="shopping">
+        <div class="insight-header">
+          <div class="insight-summary-left">
+            <div class="insight-number">04</div>
+            <div class="insight-title-wrap">
+              <span class="insight-category">Shopping</span>
+              <h3 class="insight-title">Adopt a circular consumption cycle</h3>
+            </div>
+          </div>
+          <span class="insight-trigger">+</span>
+        </div>
+        <div class="insight-drawer">
+          <div class="insight-drawer-grid">
+            <p class="insight-description">
+              Fast fashion and electronics demand severe manufacturing and logistics carbon. Shift to a thrift-first mindset and repair appliances to intercept linear waste pipelines.
+            </p>
+            <div class="insight-metric-card">
+              <div class="insight-metric-value">-0.5 t</div>
+              <div class="insight-metric-label">Potential annual savings</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Daily Actions Section ("/ Daily Actions") -->
+  <section class="reveal" id="actions-section">
+    <div class="section-label">/ Daily Actions</div>
+    <h2 class="section-title">Habit Construction.<span>Perform small, daily actions. Over time, these small behaviors lead to massive environmental relief.</span></h2>
+    
+    <div class="actions-layout">
+      <!-- Streak Counter -->
+      <div class="streak-card">
+        <div class="streak-emoji" id="streak-emoji">🌱</div>
+        <div class="streak-num" id="streak-count">0</div>
+        <div class="streak-label">Day Streak</div>
+        <p class="streak-caption">Complete all tasks today to extend your streak and help heal the biosphere.</p>
+      </div>
+
+      <!-- Checklist Card -->
+      <div class="checklist-card">
+        <div class="checklist-header">
+          <h3 class="checklist-title">Daily Operations</h3>
+          <span class="checklist-meta" id="checklist-progress">0 of 4 Completed</span>
+        </div>
+        <div class="checklist-items">
+          <div class="checklist-item" data-action-id="action-1">
+            <div class="checkbox-box">
+              <svg viewBox="0 0 20 20">
+                <path d="M3 10L8 15L17 5"/>
+              </svg>
+            </div>
+            <span class="checklist-text">Opted for active transit (walk, bike, public transport) today</span>
+            <span class="checklist-points">+5kg CO₂</span>
+          </div>
+
+          <div class="checklist-item" data-action-id="action-2">
+            <div class="checkbox-box">
+              <svg viewBox="0 0 20 20">
+                <path d="M3 10L8 15L17 5"/>
+              </svg>
+            </div>
+            <span class="checklist-text">Ate fully plant-based (vegan/vegetarian) meals today</span>
+            <span class="checklist-points">+3kg CO₂</span>
+          </div>
+
+          <div class="checklist-item" data-action-id="action-3">
+            <div class="checkbox-box">
+              <svg viewBox="0 0 20 20">
+                <path d="M3 10L8 15L17 5"/>
+              </svg>
+            </div>
+            <span class="checklist-text">Unplugged inactive electronics and minimized heating/cooling loads</span>
+            <span class="checklist-points">+2kg CO₂</span>
+          </div>
+
+          <div class="checklist-item" data-action-id="action-4">
+            <div class="checkbox-box">
+              <svg viewBox="0 0 20 20">
+                <path d="M3 10L8 15L17 5"/>
+              </svg>
+            </div>
+            <span class="checklist-text">Avoided single-use packaging and chose reusable alternatives</span>
+            <span class="checklist-points">+1kg CO₂</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-left">
+      <a href="#" class="footer-logo">Eco<span>Track.</span></a>
+      <p class="footer-desc">Crafting responsive carbon accounting systems for individuals committed to preserving our planet's ecological equilibrium.</p>
+    </div>
+    <div class="footer-right">
+      <ul class="footer-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#quiz-section">Get Started</a></li>
+        <li><a href="#dashboard-section">Your Impact</a></li>
+      </ul>
+      <ul class="footer-links">
+        <li><a href="#insights-section">Insights</a></li>
+        <li><a href="#actions-section">Daily Actions</a></li>
+      </ul>
+    </div>
+  </footer>
+  <div style="text-align: center; padding-bottom: 2rem; background: var(--bg-dark);" class="copyright">
+    &copy; 2026 Himanshu EcoTrack Platform. Built with attention to ecology and design.
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
